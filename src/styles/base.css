@@ -1,0 +1,19 @@
+/* Reset mínimo + estilo compartido de las vistas placeholder (Task 02). */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.view-placeholder h1 {
+  font-family: var(--font-display);
+  margin-bottom: var(--space-2);
+}
+
+.view-placeholder p {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}

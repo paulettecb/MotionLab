@@ -1,0 +1,25 @@
+# Deps
+node_modules
+
+# Build
+dist
+dist-ssr
+*.local
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+
+# TS build info
+node_modules/.tmp
+
+# Local HTTPS certs (basic-ssl generates on the fly, no files by default,
+# but keep this in case a cert is ever cached to disk)
+*.pem

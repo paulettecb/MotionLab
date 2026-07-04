@@ -1,0 +1,39 @@
+/* Tokens iniciales (§2.8). Set mínimo para Task 02 — se amplía en Fase 6 (pulido). */
+:root {
+  /* Color: fondo casi negro + un acento vibrante + semánticos */
+  --color-bg: #0a0a0a;
+  --color-surface: #161616;
+  --color-text: #eaeaea;
+  --color-text-muted: #9a9a9a;
+  --color-accent: #6ee7ff;
+  --color-success: #4ade80;
+  --color-error: #f87171;
+
+  /* Tipografía: display para títulos, mono para datos técnicos */
+  --font-display:
+    'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* Espaciado */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+
+  /* Radios */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-base: 240ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+  }
+}
