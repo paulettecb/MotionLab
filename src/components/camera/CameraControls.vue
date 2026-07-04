@@ -52,32 +52,37 @@ const emit = defineEmits<{
   display: flex;
   gap: var(--space-2);
   padding: var(--space-2);
-  background: rgb(10 10 10 / 55%);
+  background: rgb(255 255 255 / 85%);
   backdrop-filter: blur(6px);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .camera-controls__button {
   min-height: 44px; /* touch target ≥44px, §4.15 */
-  padding: var(--space-1) var(--space-2);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--color-text);
-  background: var(--color-surface);
-  border: 1px solid transparent;
-  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-sans);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  background: var(--surface-card);
+  border: var(--border-width) solid var(--border-subtle);
+  border-radius: var(--radius-pill);
   cursor: pointer;
   transition:
-    background var(--duration-fast) var(--ease-standard),
-    border-color var(--duration-fast) var(--ease-standard);
+    background var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
 }
 
 .camera-controls__button:hover {
-  background: #202020;
+  background: var(--surface-brand-soft);
+  color: var(--text-primary);
 }
 
 .camera-controls__button--active {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+  border-color: var(--periwinkle-500);
+  color: var(--periwinkle-700);
+  background: var(--surface-brand-soft);
 }
 </style>

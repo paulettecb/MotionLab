@@ -1,19 +1,23 @@
-/* Reset mínimo + estilo compartido de las vistas placeholder (Task 02). */
+/* Reset mínimo + estilo compartido de las vistas placeholder (Task 02,
+   retocado al adoptar KYN Design como sistema único, §2.8). */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  background: var(--surface-page);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
 }
 
 .view-placeholder h1 {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   margin-bottom: var(--space-2);
 }
 
 .view-placeholder p {
-  color: var(--color-text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
 }

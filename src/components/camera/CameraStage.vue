@@ -112,8 +112,9 @@ onUnmounted(() => {
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: var(--color-bg);
-  border-radius: var(--radius-md);
+  background: var(--oat);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
 }
 
 .camera-stage__video,

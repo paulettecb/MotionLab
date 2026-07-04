@@ -1,39 +1,172 @@
-/* Tokens iniciales (§2.8). Set mínimo para Task 02 — se amplía en Fase 6 (pulido). */
+/* Tokens del sistema de diseño — KYN Design (§2.8, actualizado tras
+   feedback de Paulette: KYN aplica a TODOS sus proyectos, Motion Lab
+   incluido). Consolida colors/typography/spacing/effects de KYN en un solo
+   archivo, siguiendo la convención de este repo (Task 02).
+
+   Excepción puntual: los .otf de Friendship/Farmhouse se self-hostean en
+   public/fonts/ — no es un modelo .task/.wasm (§2.10), pero se trata igual
+   por privacidad/consistencia: sin dependencias de terceros salvo Google
+   Fonts para Hanken Grotesk, igual que en el resto de proyectos KYN. */
+
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+
+@font-face {
+  font-family: 'Friendship';
+  src: url('/fonts/Friendship-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Farmhouse';
+  src: url('/fonts/Farmhouse.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  /* Color: fondo casi negro + un acento vibrante + semánticos */
-  --color-bg: #0a0a0a;
-  --color-surface: #161616;
-  --color-text: #eaeaea;
-  --color-text-muted: #9a9a9a;
-  --color-accent: #6ee7ff;
-  --color-success: #4ade80;
-  --color-error: #f87171;
+  /* ---- Brand periwinkle scale (500 = brand) ---- */
+  --periwinkle-50: #f0f2fb;
+  --periwinkle-100: #e2e6f5;
+  --periwinkle-200: #c9d0ed;
+  --periwinkle-300: #aeb8e2;
+  --periwinkle-400: #9ba6da;
+  --periwinkle-500: #8795d2;
+  --periwinkle-600: #6b7ac1;
+  --periwinkle-700: #5562a4;
+  --periwinkle-800: #434d80;
+  --periwinkle-900: #2f3658;
 
-  /* Tipografía: display para títulos, mono para datos técnicos */
-  --font-display:
-    'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+  /* ---- Neutros cálidos ---- */
+  --white: #ffffff;
+  --paper: #fbfaf7;
+  --oat: #f4f0e8;
+  --sand: #e9e3d7;
+  --ink-900: #2a2933;
+  --ink-700: #4a4955;
+  --ink-500: #75737f;
+  --ink-300: #a8a6b0;
+  --ink-100: #e4e2e6;
 
-  /* Espaciado */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 16px;
-  --space-4: 24px;
-  --space-5: 40px;
+  /* ---- Whimsy: pop + pastels (acentos, nunca dominantes) ---- */
+  --pop-magenta: #e85da0;
+  --pop-magenta-soft: #f7c9de;
+  --pastel-blush: #f6d2dd;
+  --pastel-peach: #f8dcc9;
+  --pastel-butter: #f6ebc4;
+  --pastel-mint: #cfe8da;
+  --pastel-sky: #cfe0f2;
+  --pastel-lilac: #e2d6f0;
 
-  /* Radios */
-  --radius-sm: 6px;
-  --radius-md: 12px;
+  /* ---- Semánticos ---- */
+  --surface-page: var(--paper);
+  --surface-section: var(--oat);
+  --surface-card: var(--white);
+  --surface-brand: var(--periwinkle-500);
+  --surface-brand-soft: var(--periwinkle-50);
 
-  /* Motion */
-  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --duration-fast: 120ms;
-  --duration-base: 240ms;
+  --text-primary: var(--ink-900);
+  --text-secondary: var(--ink-700);
+  --text-muted: var(--ink-500);
+  --text-on-brand: var(--white);
+  --text-accent: var(--periwinkle-700);
+
+  --border-subtle: var(--ink-100);
+  --border-on-oat: var(--sand);
+  --border-strong: var(--periwinkle-200);
+
+  --accent-pop: var(--pop-magenta);
+
+  --success: #4fa47a;
+  --warning: #d9a441;
+  --danger: #d9534f;
+  --focus-ring: var(--periwinkle-500);
+
+  /* ---- Tipografía ---- */
+  --font-display: 'Friendship', 'Comic Sans MS', cursive; /* logo + 1 spark por vista, nunca body */
+  --font-serif: 'Farmhouse', 'Georgia', serif; /* monogramas/flourishes puntuales, casi no se usa aquí */
+  --font-sans: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-heading: var(--font-sans);
+  --font-accent: var(--font-serif);
+  /* Excepción de proyecto: KYN no define monospace; se reserva uno de
+     sistema SOLO para lecturas técnicas (DebugPanel, coords en vivo, FPS),
+     nunca para títulos, UI general o copy de producto. */
+  --font-mono: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.25rem;
+  --text-3xl: 3rem;
+  --text-4xl: 4rem;
+  --text-5xl: 5.5rem;
+
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --leading-tight: 1.08;
+  --leading-snug: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-eyebrow: 0.18em;
+
+  /* ---- Espaciado (4px base) ---- */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  --container-max: 1200px;
+  --container-pad: 1.5rem;
+  --section-y: 6rem;
+
+  /* ---- Efectos ---- */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  --shadow-xs: 0 1px 2px rgba(47, 54, 88, 0.06);
+  --shadow-sm: 0 2px 8px rgba(47, 54, 88, 0.07);
+  --shadow-md: 0 8px 24px rgba(47, 54, 88, 0.09);
+  --shadow-lg: 0 18px 48px rgba(47, 54, 88, 0.12);
+  --shadow-focus: 0 0 0 3px rgba(135, 149, 210, 0.35);
+
+  --border-width: 1px;
+  --border-width-strong: 1.5px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --dur-slow: 360ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
   :root {
-    --duration-fast: 0ms;
-    --duration-base: 0ms;
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
   }
 }

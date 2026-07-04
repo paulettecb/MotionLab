@@ -35,25 +35,28 @@ const navLinks = [
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-display);
+  background: var(--surface-page);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
 }
 
 .app-shell__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-3);
-  padding: var(--space-3) var(--space-4);
-  border-bottom: 1px solid var(--color-surface);
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: var(--surface-card);
+  border-bottom: var(--border-width) solid var(--border-subtle);
 }
 
 .app-shell__brand {
-  color: var(--color-text);
+  /* El wordmark es el "spark" de whimsy de la marca (§2.8): único lugar
+     donde se usa Friendship en toda la UI. */
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--text-primary);
   text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.02em;
 }
 
 .app-shell__nav {
@@ -62,23 +65,29 @@ const navLinks = [
 }
 
 .app-shell__link {
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
   text-decoration: none;
-  padding: var(--space-1) var(--space-2);
-  border-radius: var(--radius-sm);
-  transition: color var(--duration-fast) var(--ease-standard);
+  font-weight: var(--weight-medium);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  transition: color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
 }
 
 .app-shell__link:hover {
-  color: var(--color-text);
+  color: var(--text-primary);
+  background: var(--surface-brand-soft);
 }
 
 .app-shell__link--active {
-  color: var(--color-accent);
+  color: var(--periwinkle-700);
+  background: var(--surface-brand-soft);
 }
 
 .app-shell__main {
   flex: 1;
-  padding: var(--space-5) var(--space-4);
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-5);
 }
 </style>

@@ -78,45 +78,51 @@ function handleClick(): void {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-3);
-  padding: var(--space-4);
+  gap: var(--space-4);
+  padding: var(--space-6);
   text-align: center;
-  background: var(--color-surface);
+  background: var(--oat);
 }
 
 .permission-gate__message {
-  color: var(--color-text);
+  color: var(--text-primary);
   max-width: 32ch;
   margin: 0;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
 }
 
 .permission-gate__message--error {
-  color: var(--color-error);
+  color: var(--danger);
 }
 
 .permission-gate__action {
-  color: var(--color-text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
   max-width: 36ch;
   margin: 0;
 }
 
 .permission-gate__button {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-base);
   min-height: 44px;
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-pill);
   border: none;
-  background: var(--color-accent);
-  color: var(--color-bg);
+  background: var(--periwinkle-500);
+  color: var(--text-on-brand);
   cursor: pointer;
-  transition: opacity var(--duration-fast) var(--ease-standard);
+  box-shadow: var(--shadow-sm);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
 }
 
 .permission-gate__button:hover {
-  opacity: 0.85;
+  background: var(--periwinkle-600);
+  box-shadow: var(--shadow-md);
 }
 </style>

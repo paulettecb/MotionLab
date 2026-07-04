@@ -241,10 +241,15 @@ Todos los módulos con `defineAsyncComponent`/import dinámico (code-splitting r
 
 ### 2.8 Sistema de diseño
 
-- `tokens.css`: paleta (fondo casi negro, un acento vibrante, semánticos para éxito/error de detección), tipografía (una display para títulos + una mono para datos técnicos — el panel de debug con mono se ve "de laboratorio"), spacing scale, radios, duraciones/easings de motion.
-- Estética objetivo: **instrumento científico elegante**, no demo de Google. Video grande, overlays finos, datos en mono, microinteracciones con motion.
-- Componentes base mínimos: `BaseButton`, `BaseCard`, `BaseToggle`, `BaseSlider`, `StatChip` (para métricas), `ModuleHero`.
-- `prefers-reduced-motion` respetado desde el día 1.
+> Actualizado: §0 ya decía "KYN Design Skill" pero esta sección describía un sistema distinto ("instrumento científico elegante") que se implementó en Tasks 01-02. Contradicción detectada al ejecutar Task 05 y resuelta con Paulette: **KYN Design aplica a todos sus proyectos, Motion Lab incluido, sin tema aparte por módulo.**
+
+- `tokens.css` consolida los tokens de KYN (colors/typography/spacing/effects) en un solo archivo, siguiendo la convención de este repo: paleta periwinkle (`--periwinkle-500` = acento/acción) sobre neutros cálidos (`--paper`, `--oat`, `--ink-900`); pastels y el magenta pop (`--pop-magenta`) como whimsy — un acento por vista, nunca dominante.
+- Tipografía: **Hanken Grotesk** (`--font-sans`/`--font-heading`) para todo lo estructural — títulos, UI, copy, datos de producto; **Friendship** (`--font-display`) reservada a un único "spark" por vista (el wordmark "Motion Lab" en el header, nada más); **Farmhouse** (`--font-accent`) para flourishes puntuales, prácticamente sin uso en este proyecto.
+- Excepción de proyecto: KYN no define una fuente monoespaciada. Los paneles técnicos (DebugPanel, lecturas de landmarks/ángulos/FPS) usan `--font-mono` (system monospace) solo para esas cifras — nunca para títulos, UI general o copy.
+- Radios generosos (`--radius-md/lg/pill`), sombras suaves periwinkle-tinted (`--shadow-sm/md/lg`), motion gentle (`--ease-out`, `--dur-fast/base/slow`, 140–360ms).
+- Fuentes: Hanken Grotesk vía Google Fonts (igual que el resto de proyectos KYN); Friendship/Farmhouse (`.otf`) self-hosteados en `public/fonts/` — excepción puntual a la regla de self-host de §2.10, que es específica de modelos `.task`/`.wasm`.
+- Componentes base: se adoptan los primitivos de KYN (`Button`, `IconButton`, `Input`, `Checkbox`, `Badge`, `Card`) donde apliquen; lo específico de visión (`CameraStage`, `LandmarkOverlay`, `DebugPanel`) hereda los tokens pero no es parte del kit KYN.
+- `prefers-reduced-motion` respetado desde el día 1 (ya en `tokens.css`).
 
 ### 2.9 Convenciones
 
